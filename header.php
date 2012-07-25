@@ -18,6 +18,8 @@
   <?php roots_head(); ?>
   <?php wp_head(); ?>
 
+  <link rel="stylesheet" media="screen" type="text/css" href="/manual/css/my.css?nch=<?php echo $nch; ?>" />
+
 </head>
 
 <body <?php body_class(); ?>>

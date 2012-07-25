@@ -1,0 +1,57 @@
+
+/* All */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: inherit;
+    font-weight: 200;
+}
+
+h2, h3, h4, h5, h6 {
+    margin:20px 0 10px 0;
+}
+
+/* Header */
+
+#logo{
+    margin-right:10px;
+}
+
+#nav-main{
+    margin-top:10px;
+}
+
+.navbar .brand {
+    color:white !important;
+}
+
+
+
+/* Content */
+
+#content{
+    margin-left:-10px;
+}
+
+#main{
+    margin-left:10px;
+}
+
+#wrap{
+    padding-top:30px;
+}
+
+
+.container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+    width: 100% !important;
+}
+
+/* Footer */
+
+#content-info{
+    border-top: 1px solid #F3F3F3;
+    margin-top: 30px;
+    padding: 10px 0 0 20px;
+}
