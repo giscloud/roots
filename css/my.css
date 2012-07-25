@@ -59,6 +59,30 @@ h2, h3, h4, h5, h6 {
     margin-right:5px;
 }
 
+.treeview a{
+    padding:4px 5px 4px 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.treeview a:hover{
+    text-decoration:none;
+}
+
+.treeview a.hover,
+.treeview a:hover{
+    background-color:#F6f6f6 !important;
+    text-decoration:none;
+    color:#08C;
+}
+
+.treeview a.selected{
+    background-color:#F3F3F3 !important;
+    background-color:#e20000 !important;
+    color:white !important;
+}
+
 
 .container,
 .navbar-fixed-top .container,
