@@ -3,6 +3,10 @@
  * Roots functions
  */
 
+// my
+add_filter('show_admin_bar', '__return_false');
+// /my
+
 if (!defined('__DIR__')) { define('__DIR__', dirname(__FILE__)); }
 
 require_once locate_template('/inc/util.php');            // Utility functions
