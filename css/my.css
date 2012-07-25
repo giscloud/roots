@@ -25,7 +25,19 @@ h2, h3, h4, h5, h6 {
     color:white !important;
 }
 
+.navbar-inner{
+    background-color:#0097C6;
+    background-image:none;
+}
 
+.navbar .nav > li > a{
+    color:#D6F5FF;
+}
+
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover{
+    background-color:#00a0d2 !important;
+}
 
 /* Content */
 
@@ -35,10 +47,16 @@ h2, h3, h4, h5, h6 {
 
 #main{
     margin-left:10px;
+    padding-left:20px;
 }
 
 #wrap{
     padding-top:30px;
+}
+
+#treecontrol a{
+    font-size:10px;
+    margin-right:5px;
 }
 
 
