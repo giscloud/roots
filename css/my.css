@@ -90,7 +90,7 @@ h2, h3, h4, h5, h6 {
 .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-    width: 100% !important;
+    width: 98% !important;
 }
 
 /* Footer */
@@ -99,4 +99,6 @@ h2, h3, h4, h5, h6 {
     border-top: 1px solid #F3F3F3;
     margin-top: 30px;
     padding: 10px 0 0 20px;
+    color:#999;
+    font-size:11px;
 }
