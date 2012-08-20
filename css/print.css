@@ -11,6 +11,15 @@ body.top-navbar {
     display:none;
 }
 
+img{
+    margin:7px 0 7px 0;
+}
+
+ul,
+ol{
+    margin-top:7px;
+}
+
 h1{
     page-break-before:right;
 }

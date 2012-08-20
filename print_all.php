@@ -11,14 +11,15 @@
 global $limit;
 global $pages_num;
 
-$limit = 5;
+$pages_num = 0;
+$limit = isset($_REQUEST['limit']) ? $_REQUEST['limit'] : null;
 
 function listPages($parent_id, $level)
 {
     global $limit;
     global $pages_num;
 
-    if (++$pages_num>$limit) return;
+    if (is_numeric($limit) && ++$pages_num>$limit) return;
 
     $args = array(
         'post_type' => array( 'page' ),
