@@ -20,6 +20,10 @@
 
   <link rel="stylesheet" media="screen" type="text/css" href="/manual/css/my.css?nch=<?php echo $nch; ?>" />
 
+  <?php if(is_page_template("print_all.php")){ ?>
+  <link rel="stylesheet" media="all" type="text/css" href="/manual/css/print.css?nch=<?php echo $nch; ?>" />
+  <?php } ?>
+
 </head>
 
 <body <?php body_class(); ?>>

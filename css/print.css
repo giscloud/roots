@@ -1,0 +1,24 @@
+header{
+    display:none;
+}
+
+body.top-navbar {
+    margin:0;
+    padding:0;
+}
+
+#custom_footer{
+    display:none;
+}
+
+h1{
+    page-break-before:right;
+}
+
+h2{
+    margin-top:30px;
+}
+
+h3{
+    margin-top:15px;
+}

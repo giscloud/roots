@@ -8,9 +8,18 @@
 
 <?php
 
+global $limit;
+global $pages_num;
 
-function listPages($parent_id)
+$limit = 5;
+
+function listPages($parent_id, $level)
 {
+    global $limit;
+    global $pages_num;
+
+    if (++$pages_num>$limit) return;
+
     $args = array(
         'post_type' => array( 'page' ),
         'post_status' => array( 'publish' ),
@@ -32,14 +41,14 @@ function listPages($parent_id)
         {
             echo '<div class="page" style="margin-bottom:40px;" >';
             echo '    <div class="page-header">';
-            echo '        <h1 class="postTitle">'.$page->post_title.'</h1>';
+            echo "        <h$level class='postTitle'>".$page->post_title."</h$level>";
             echo '    </div>';
             echo '    <div class="" >';
             echo $page->post_content;
             echo '    </div>';
             echo '</div>';
 
-            listPages($page->ID);
+            listPages($page->ID, $level);
         }
 
 
@@ -52,7 +61,7 @@ echo '<div id="content" class="'.CONTAINER_CLASSES.'">';
 echo '    <div id="main" class="'.MAIN_CLASSES.'" role="main">';
 ?>
 
-<?php listPages(0); ?>
+<?php listPages(0, 1); ?>
 
 <?php
 echo '    </div>';
