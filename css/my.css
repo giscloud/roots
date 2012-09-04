@@ -53,6 +53,10 @@ h2, h3, h4, h5, h6 {
     padding-left:20px;
 }
 
+#main img{
+    height: auto;
+}
+
 #main img.margin20{
     margin:20px 0 20px 0;
 }

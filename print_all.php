@@ -41,15 +41,22 @@ function listPages($parent_id, $level)
         foreach ($pages as $page)
         {
             echo '<div class="page" style="margin-bottom:40px;" >';
-            echo '    <div class="page-header">';
+            if ($level==1) echo '    <div class="page-header">';
             echo "        <h$level class='postTitle'>".$page->post_title."</h$level>";
-            echo '    </div>';
+            if ($level==1) echo '    </div>';
             echo '    <div class="" >';
-            echo $page->post_content;
+
+            $content = $page->post_content;
+            $content = str_replace("<h$level>", "<h".($level+1).">", $content);
+            $content = str_replace("</h$level>", "</h".($level+1).">", $content);
+            echo $content;
+
+
             echo '    </div>';
             echo '</div>';
 
-            listPages($page->ID, $level);
+            $next_level = $level+1;
+            listPages($page->ID, $next_level);
         }
 
 
