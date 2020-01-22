@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </a>
       <a class="brand" href="<?php echo home_url(); ?>/">
-        <img id="logo" src="http://www.giscloud.com/assets/images/giscloud_logo_white.png" width="60" height="43" /><?php bloginfo('name'); ?>
+        <img id="logo" src="https://app.giscloud.com/assets/images/giscloud_logo_white.png" width="60" height="43" /><?php bloginfo('name'); ?>
       </a>
       <nav id="nav-main" class="nav-collapse" role="navigation">
         <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav')); ?>
