@@ -45,3 +45,41 @@ function roots_setup() {
 }
 
 add_action('after_setup_theme', 'roots_setup');
+
+function add_woopra_script() {
+  ?>
+      <script type="text/javascript">
+          (function(){
+  var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+  })("woopra");
+  woopra.config({"app":"wordpress","domain":"giscloud.com","download_tracking":false,"outgoing_tracking":false,"hide_campaign":false});
+  woopra.track();
+      </script>
+  <?php
+}
+
+add_action('wp_head', 'add_woopra_script');
+
+function add_listener_woopra_tracking() {
+    ?>
+        <script type="text/javascript">
+            document.addEventListener( 'wpcf7mailsent', function( event ) {
+
+              var inputs = event.detail.inputs;
+
+              var emailObj = inputs.filter(input => input.name === "your-email")[0];
+
+              if (emailObj && emailObj.value) {
+
+                var email = emailObj.value;
+
+                woopra.identify({ email: email });
+                woopra.track("dev_docs_general_contact", { email: email });
+              }
+
+            }, false );
+        </script>
+    <?php
+}
+
+add_action('wp_footer', 'add_listener_woopra_tracking');
