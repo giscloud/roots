@@ -65,16 +65,21 @@ function add_listener_woopra_tracking() {
         <script type="text/javascript">
             document.addEventListener( 'wpcf7mailsent', function( event ) {
 
+              var woopraEvents = {
+                "401": "dev_docs_general_contact",
+                "78": "dev_docs_custom_app_contact",
+              };
+
               var inputs = event.detail.inputs;
-
               var emailObj = inputs.filter(input => input.name === "your-email")[0];
+              var wooEvent = woopraEvents[event.detail.containerPostId];
 
-              if (emailObj && emailObj.value) {
+              if (emailObj && emailObj.value && wooEvent) {
 
                 var email = emailObj.value;
 
                 woopra.identify({ email: email });
-                woopra.track("dev_docs_general_contact", { email: email });
+                woopra.track(wooEvent, { email: email });
               }
 
             }, false );
