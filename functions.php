@@ -74,7 +74,7 @@ function add_listener_woopra_tracking() {
               var emailObj = inputs.filter(input => input.name === "your-email")[0];
               var wooEvent = woopraEvents[window.type_of_post];
 
-              if (emailObj && emailObj.value && wooEvent) {
+              if (emailObj && emailObj.value && wooEvent && typeof woopra !== "undefined") {
 
                 var email = emailObj.value;
 
